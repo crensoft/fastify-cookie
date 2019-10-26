@@ -41,6 +41,8 @@ function plugin (fastify, options, next) {
   fastify.decorateRequest('cookies', {})
   fastify.decorateReply('setCookie', fastifyCookieSetCookie)
   fastify.decorateReply('clearCookie', fastifyCookieClearCookie)
+  fastify.decorateRequest('setCookie', fastifyCookieSetCookie)
+  fastify.decorateRequest('clearCookie', fastifyCookieClearCookie)
   fastify.addHook('onRequest', fastifyCookieOnReqHandler)
   next()
 }
